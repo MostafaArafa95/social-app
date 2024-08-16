@@ -1,11 +1,16 @@
-import { View, StyleSheet, Text } from "react-native"
+import { View, StyleSheet, Text, TouchableHighlight } from "react-native"
 import { Post } from "../types"
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import EvilIcons from '@expo/vector-icons/EvilIcons';
+import { useCallback } from "react";
 type PostCardProps = {
-    post: Post
+    post: Post,
+    onPress: (id: number) => void
 }
-export const PostCard = ({ post }: PostCardProps) => {
+export const PostCard = ({ post, onPress }: PostCardProps) => {
+    const _onPress = useCallback(() => {
+        onPress(post.id)
+    }, [onPress])
     const renderUserSection = () => {
         return <View style={styles.userSectionContainer}>
             <FontAwesome5 name="user-circle" size={24} color="green" />
@@ -18,16 +23,16 @@ export const PostCard = ({ post }: PostCardProps) => {
             <Text style={styles.commentsCount}>{post.comments.totalCount}</Text>
         </View>
     }
-    return <View style={styles.container}>
-        {renderUserSection()}
-
-
-        <Text style={styles.titleText}>{post.title}</Text>
-        <Text style={styles.bodyText}>{post.body}</Text>
-        {renderCommentSection()}
-
-
-    </View>
+    return <TouchableHighlight onPress={_onPress}>
+        <View style={styles.container}>
+            {renderUserSection()}
+            <Text style={styles.titleText}>{post.title}</Text>
+            <View style={styles.bottomContainer}>
+                <Text style={styles.bodyText}>{post.body}</Text>
+                {renderCommentSection()}
+            </View>
+        </View>
+    </TouchableHighlight>
 }
 const styles = StyleSheet.create({
     container: {
@@ -47,6 +52,7 @@ const styles = StyleSheet.create({
     },
     bodyText: {
         fontSize: 12,
+        flex: 1
     },
     usernameText: {
         fontSize: 10,
@@ -55,17 +61,18 @@ const styles = StyleSheet.create({
     },
     userSectionContainer: {
         flexDirection: "row",
-        marginBottom: 6
+
     },
     commentSectionContainer: {
         flexDirection: "row",
 
-        paddingVertical: 12
+
     },
     commentsCount: {
         fontSize: 10,
         textAlign: "center",
         textAlignVertical: "center"
-    }
+    },
+    bottomContainer: { flexDirection: "row", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 6 }
 
 })
