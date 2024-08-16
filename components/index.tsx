@@ -1,1 +1,6 @@
 export { PostCard } from "./PostCard"
+export { Header } from "./Header"
+export * from "./Loading"
+export * from "./ScreenError"
+export * from "./UsernameHeader"
+export * from "./AppLogo"

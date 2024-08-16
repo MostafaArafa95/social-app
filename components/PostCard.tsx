@@ -1,22 +1,16 @@
 import { View, StyleSheet, Text, TouchableHighlight } from "react-native"
 import { Post } from "../types"
-import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import EvilIcons from '@expo/vector-icons/EvilIcons';
 import { useCallback } from "react";
+import { UsernameHeader } from "./UsernameHeader";
 type PostCardProps = {
     post: Post,
-    onPress: (id: number) => void
+    onPress?: (id: number) => void
 }
 export const PostCard = ({ post, onPress }: PostCardProps) => {
     const _onPress = useCallback(() => {
-        onPress(post.id)
+        onPress?.(post.id)
     }, [onPress])
-    const renderUserSection = () => {
-        return <View style={styles.userSectionContainer}>
-            <FontAwesome5 name="user-circle" size={24} color="green" />
-            <Text style={styles.usernameText}>{post.user.name}</Text>
-        </View>
-    }
     const renderCommentSection = () => {
         return <View style={styles.commentSectionContainer}>
             <EvilIcons name="comment" size={24} color="black" />
@@ -25,7 +19,7 @@ export const PostCard = ({ post, onPress }: PostCardProps) => {
     }
     return <TouchableHighlight onPress={_onPress}>
         <View style={styles.container}>
-            {renderUserSection()}
+            <UsernameHeader userName={post.user.name} />
             <Text style={styles.titleText}>{post.title}</Text>
             <View style={styles.bottomContainer}>
                 <Text style={styles.bodyText}>{post.body}</Text>
@@ -47,7 +41,6 @@ const styles = StyleSheet.create({
     titleText: {
         fontSize: 14,
         fontWeight: "bold",
-        flex: 1
 
     },
     bodyText: {
@@ -65,8 +58,6 @@ const styles = StyleSheet.create({
     },
     commentSectionContainer: {
         flexDirection: "row",
-
-
     },
     commentsCount: {
         fontSize: 10,
