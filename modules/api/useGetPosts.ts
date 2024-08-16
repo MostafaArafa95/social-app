@@ -1,4 +1,5 @@
 import { useQuery, gql } from '@apollo/client';
+import { Post } from '../../types';
 const GET_POSTS = gql`
   query	{
   posts{
@@ -18,7 +19,13 @@ const GET_POSTS = gql`
   }
 }
 `;
+
+type GetPostsResponse = {
+  posts: {
+    nodes: Post[]
+  }
+}
 export const useGetPosts = () => {
-    const result = useQuery(GET_POSTS);
-    return result
+  const result = useQuery<GetPostsResponse>(GET_POSTS);
+  return result
 }
