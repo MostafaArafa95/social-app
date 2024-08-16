@@ -1,6 +1,6 @@
 # Simple Social Media App 👋
 
-This is a simple 2 screens app created with react-native and expo.
+This is a simple 3 screens app created with react-native and expo.
 
 ## Running the project
 1. Make sure you setup your environment by following up with thes steps in this [link](https://docs.expo.dev/get-started/set-up-your-environment/)
@@ -22,5 +22,6 @@ You can just scan this code to download the latest version
 ![alt text](</docs/assets/barcode.png>)
 
 ## App show down
+- ![alt text](/docs/assets/splash.png)
 - ![alt text](/docs/assets/screenshot1.jpeg)
 - ![alt text](/docs/assets/screenshot2.jpeg)
