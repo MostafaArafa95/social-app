@@ -13,7 +13,7 @@ This is a simple 2 screens app created with react-native and expo.
 2. Start expo server by running this command in the app root directory
 
    ```bash
-    npx expo start
+    yarn start
    ```
 
 ## Install the app (android)
