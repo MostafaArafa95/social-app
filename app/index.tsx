@@ -1,16 +1,9 @@
-//TODO: delete boilerplate files
 import { router } from "expo-router"
-import {
-    useSafeAreaInsets,
-    EdgeInsets,
-} from 'react-native-safe-area-context';
-import { View, Text, StyleSheet, ActivityIndicator, TouchableOpacity, FlatList } from "react-native"
+import { View, StyleSheet, FlatList } from "react-native"
 import { useGetPosts } from "../modules/api/useGetPosts"
 import { useCallback } from "react";
 import { PostCard, Loading, ScreenError } from "../components";
 
-
-//TODO: fix all status
 const HomePage = () => {
     const { loading, data, refetch, error } = useGetPosts()
     const onPressCard = useCallback((postId: number) => {
