@@ -22,8 +22,5 @@ You can just scan this code to download the latest version
 ![alt text](</docs/assets/barcode.png>)
 
 ## App show down
-
-- Home Screen.
-![alt text](/docs/assets/screenshot1.jpeg)
-- Post Details
-![alt text](/docs/assets/screenshot2.jpeg)
+- ![alt text](/docs/assets/screenshot1.jpeg)
+- ![alt text](/docs/assets/screenshot2.jpeg)
