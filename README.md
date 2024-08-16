@@ -1,31 +1,24 @@
-# Welcome to your Expo app 👋
+# Simple Social Media App 👋
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This is a simple 2 screens app created with react-native and expo.
 
-## Get started
-
-1. Install dependencies
+## Running the project
+1. Make sure you setup your environment by following up with thes steps in this [link](https://docs.expo.dev/get-started/set-up-your-environment/)
+1. Clone this repo
 
    ```bash
-   npm install
+   git clone https://github.com/MostafaArafa95/social-app.git
    ```
 
-2. Start the app
+2. Start expo server by running this command in the app root directory
 
    ```bash
     npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+## Install the app (android)
+![alt text](https://ibb.co/B2t40SR)
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
 
 When you're ready, run:
 
